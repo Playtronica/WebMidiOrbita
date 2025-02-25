@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ORBITA DIY Remote Control</title>
+    <script src="https://cdn.jsdelivr.net/gh/benc-uk/touchmidi@v2.2.0/dist/bundle.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      
+      .container {
+        min-height: 800px; /* Minimum height to ensure all controls are visible */
+        padding: 20px;
+        overflow-y: auto;
+      }
+      
+      group-row:first-of-type {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+    <h1>ORBITA DIY Remote Control</h1>
+
+
+      <group-row grow="1">
+        <midi-spacer></midi-spacer><midi-spacer></midi-spacer>O<midi-spacer></midi-spacer>TRACK 1 - R<midi-spacer></midi-spacer>TRACK 2 - B<midi-spacer></midi-spacer>TRACK 3 - I<midi-spacer></midi-spacer>TRACK 4 - T<midi-spacer></midi-spacer>A<midi-spacer></midi-spacer>MOTOR<midi-spacer></midi-spacer><midi-spacer></midi-spacer>
+      </group-row>
+
+      <group-row>
+        <group-column grow="2">
+        </group-column>     
+        <group-column>
+            <br><br><midi-spacer></midi-spacer><br>MIDI CHANNEL<br><br><br>MIDI CC<midi-spacer></midi-spacer>MIDI NOTES<midi-spacer></midi-spacer>
+        </group-column>       
+        <group-column grow="1">
+          <midi-button toggle label="ON/OFF  CC20" chan="1" cc="20" value="126" value-off="1" toggle colour="#FFFFAA" label-scale="0.5">></midi-button>
+          <midi-button toggle label="NOTE/CC MODE" chan="1" cc="38" value="126" value-off="1" toggle colour="#FFFFFF" label-scale="0.5">></midi-button>
+
+          <group-row grow="1">
+            <midi-encoder label="NoteLength \nCC24" cc="24" value="44" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="Velocity \nCC28" cc="28" value="87" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <group-row grow="1">
+            <midi-encoder label="Probability \nCC42" cc="42" value="127" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="VeloRange \nCC46" cc="46" value="0" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <midi-counter cc="32" value="1" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="78" value="102" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="50" value="36" colour="red" label-scale="0.8"></midi-counter>
+          <midi-counter cc="51" value="38" colour="orange" label-scale="0.8"></midi-counter>
+          <midi-counter cc="52" value="40" colour="yellow" label-scale="0.8"></midi-counter>
+          <midi-counter cc="53" value="41" colour="green" label-scale="0.8"></midi-counter>
+          <midi-counter cc="54" value="43" colour="dodgerblue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="55" value="45" colour="blue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="56" value="47" colour="magenta" label-scale="0.8"></midi-counter>
+        </group-column>
+        <group-column>
+          <midi-button toggle label="ON/OFF  CC21" chan="1" cc="21" value="126" value-off="1" toggle colour="#FFFFAA" label-scale="0.5">></midi-button>
+          <midi-button toggle label="NOTE/CC MODE" chan="1" cc="39" value="126" value-off="1" toggle colour="#FFFFFF" label-scale="0.5">></midi-button>
+
+          <group-row grow="1">
+            <midi-encoder label="NoteLength  \nCC25" cc="25" value="44" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="Velocity \nCC29" cc="29" value="87" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <group-row grow="1">
+            <midi-encoder label="Probability \nCC43" cc="43" value="127" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="VeloRange \nCC47" cc="47" value="0" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <midi-counter cc="33" value="1" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="79" value="103" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="57" value="48" colour="red" label-scale="0.8"></midi-counter>
+          <midi-counter cc="58" value="50" colour="orange" label-scale="0.8"></midi-counter>
+          <midi-counter cc="59" value="52" colour="yellow" label-scale="0.8"></midi-counter>
+          <midi-counter cc="60" value="53" colour="green" label-scale="0.8"></midi-counter>
+          <midi-counter cc="61" value="55" colour="dodgerblue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="62" value="57" colour="blue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="63" value="59" colour="magenta" label-scale="0.8"></midi-counter>
+        </group-column>
+        <group-column>
+          <midi-button toggle label="ON/OFF  CC22" chan="1" cc="22" value="126" value-off="1" toggle colour="#FFFFAA" label-scale="0.5">></midi-button>
+          <midi-button toggle label="NOTE/CC MODE" chan="1" cc="40" value="126" value-off="1" toggle colour="#FFFFFF" label-scale="0.5">></midi-button>
+
+          <group-row grow="1">
+            <midi-encoder label="NoteLength \nCC26" cc="26" value="44" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="Velocity \nCC30" cc="30" value="87"colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <group-row grow="1">
+            <midi-encoder label="Probability \nCC44" cc="44" value="127" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="VeloRange \nCC48" cc="48" value="0" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <midi-counter cc="34" value="1" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="80" value="104" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="64" value="60" colour="red" label-scale="0.8"></midi-counter>
+          <midi-counter cc="65" value="62" colour="orange" label-scale="0.8"></midi-counter>
+          <midi-counter cc="66" value="64" colour="yellow" label-scale="0.8"></midi-counter>
+          <midi-counter cc="67" value="65" colour="green" label-scale="0.8"></midi-counter>
+          <midi-counter cc="68" value="67" colour="dodgerblue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="69" value="69" colour="blue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="70" value="71" colour="magenta" label-scale="0.8"></midi-counter>
+        </group-column>
+        <group-column>
+          <midi-button toggle label="ON/OFF CC23" chan="1" cc="23" value="127" value-off="1" toggle colour="#FFFFAA" label-scale="0.5">></midi-button>
+          <midi-button toggle label="NOTE/CC MODE" chan="1" cc="41" value="126" value-off="1" toggle colour="#FFFFFF" label-scale="0.5">></midi-button>
+
+          <group-row grow="1">
+            <midi-encoder label="NoteLength \nCC27" cc="27" value="44" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="Velocity \nCC31" cc="31" value="87" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <group-row grow="1">
+            <midi-encoder label="Probability \nCC45" cc="45" value="127" colour="#FFFFAA" label-scale="0.8"></midi-encoder>
+            <midi-encoder label="VeloRange \nCC49" cc="49" value="0" colour="white" label-scale="0.8"></midi-encoder>
+          </group-row>
+          <midi-counter cc="35" value="1" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="81" value="105" colour="white" label-scale="0.8"></midi-counter>
+          <midi-counter cc="71" value="72" colour="red" label-scale="0.8"></midi-counter>
+          <midi-counter cc="72" value="74" colour="orange" label-scale="0.8"></midi-counter>
+          <midi-counter cc="73" value="76" colour="yellow" label-scale="0.8"></midi-counter>
+          <midi-counter cc="74" value="77" colour="green" label-scale="0.8"></midi-counter>
+          <midi-counter cc="75" value="79" colour="dodgerblue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="76" value="81" colour="blue" label-scale="0.8"></midi-counter>
+          <midi-counter cc="77" value="83" colour="magenta" label-scale="0.8"></midi-counter>
+        </group-column>
+        <group-column>
+            <midi-spacer></midi-spacer>.<midi-spacer></midi-spacer>.<midi-spacer></midi-spacer>
+        </group-column>
+        <group-column >
+                <midi-button toggle label="MOTOR ON/OFF \nCC36" chan="1" cc="36" value="127" value-off="1" toggle colour="#FFFFFF" label-scale="0.5">></midi-button>
+                <midi-encoder label="Motor Speed \nCC37" cc="37" value="10" label-scale="0.5"></midi-encoder>
+                <midi-spacer></midi-spacer>
+                <midi-button label="RESET MIDI PITCHES  C Major" chan="1" cc="100" value="66"   colour="#CCCCCC" label-scale="0.6">></midi-button>
+                <midi-button label="RESET MIDI PITCHES  Chromatic" chan="1" cc="100" value="67"   colour="#CCCCCC" label-scale="0.6">></midi-button>
+                <midi-spacer></midi-spacer>       
+                <midi-button label="SAVE SETTINGS" chan="1" cc="99" value="127"  colour="#66CC66" label-scale="0.6">></midi-button>
+        </group-column>
+        <group-column>
+          <group-row >
+            <midi-spacer></midi-spacer>
+            <midi-spacer></midi-spacer>
+          </group-row>
+        </group-column>
+        <group-column></group-column>
+        
+        <group-column>
+      </group-row>
+    </div>
+  </body>
+</html>
