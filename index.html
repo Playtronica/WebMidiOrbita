@@ -1,8 +1,12 @@
-<!--    
-ORBITA DIY WEBCONTROL
-Author: Steffen Sennert
-2025 for PLAYTRONICA
+<!-- 
+ * **************************************************************
+ * ORBITA DIY DANDELION - WEBREMOTE
+ *
+ * written 2025 by STEFFEN SENNERT // PINKCLOUD.ENGINEERING
+ * 
+ * **************************************************************
 -->
+
 
 <!DOCTYPE html>
 <html>
@@ -173,6 +177,7 @@ Author: Steffen Sennert
                 <midi-spacer></midi-spacer>
                 <midi-button label="RESET MIDI PITCHES  C Major" chan="1" cc="100" value="66"   colour="#CCCCCC" label-scale="0.6">></midi-button>
                 <midi-button label="RESET MIDI PITCHES  Chromatic" chan="1" cc="100" value="67"   colour="#CCCCCC" label-scale="0.6">></midi-button>
+                <midi-button toggle label="No Magnet Mode Color/B&W" chan="1" cc="101" value="127"  value-off="1" colour="#CCCCCC" label-scale="0.6">></midi-button>
                 <midi-spacer></midi-spacer>       
                 <midi-button label="SAVE SETTINGS" chan="1" cc="99" value="127"  colour="#66CC66" label-scale="0.6">></midi-button>
         </group-column>
@@ -186,6 +191,13 @@ Author: Steffen Sennert
         
         <group-column>
       </group-row>
+
+
+
+
+
+
+
     </div>
   </body>
 </html>
