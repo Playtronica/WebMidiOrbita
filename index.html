@@ -13,6 +13,13 @@
   <head>
     <title>ORBITA DIY Remote Control</title>
     <script src="https://cdn.jsdelivr.net/gh/benc-uk/touchmidi@v2.2.0/dist/bundle.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
     <style>
       html, body {
         margin: 0;
@@ -21,7 +28,7 @@
         font-family: 'Arial', sans-serif;
       }
       
-      .container {
+      .my_container {
         min-height: 800px; /* Minimum height to ensure all controls are visible */
         padding: 20px;
         overflow-y: auto;
@@ -31,7 +38,6 @@
       h1 {
         text-align: center;
         color: #FEFEFE;
-        margin-bottom: 30px;
       }
       
       
@@ -55,13 +61,41 @@
         text-align: center;
         margin: 5px;
       }
-   
+
+      .black .active a,
+      .black .active a:hover {
+        background-color: black;
+      }
+
+      .black a {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="my_container">
+      <header class="d-flex justify-content-center">
+        <ul class="nav nav-pills black">
+          <li class="nav-item">
+            <a href="https://settings.playtronica.com/#/biotron" class="nav-link">Biotron</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://settings.playtronica.com/#/touchme" class="nav-link">TouchMe</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://settings.playtronica.com/#/playtron" class="nav-link">Playtron</a>
+          </li>
+          <li class="nav-item active" >
+            <a href="https://playtronica.github.io/WebMidiOrbita/" class="active router-link-exact-active nav-link bg-dark" aria-current="page">Orbita</a>
+          </li>
+        </ul>
+      </header>
 
-    <h1>ORBITA DIY Remote Control</h1>
+      <h1>ORBITA DIY Remote Control</h1>
+
+      <div class="d-flex justify-content-center mb-5">
+        <button id="update_firmware_button" class="btn btn-dark">Update firmware</button>
+      </div>
 
 
       <group-row grow="1">
@@ -179,7 +213,7 @@
                 <midi-button label="RESET MIDI PITCHES  Chromatic" chan="1" cc="100" value="67"   colour="#CCCCCC" label-scale="0.6">></midi-button>
                 <midi-button toggle label="No Magnet Mode Color/B&W" chan="1" cc="101" value="127"  value-off="1" colour="#CCCCCC" label-scale="0.6">></midi-button>
                 <midi-spacer></midi-spacer>       
-                <midi-button label="SAVE SETTINGS" chan="1" cc="99" value="127"  colour="#66CC66" label-scale="0.6">></midi-button>
+                <midi-button label="SAVE SETTINGS" chan="1" cc="99" value="127"  colour="#66CC66" label-scale="0.6"></midi-button>
         </group-column>
         <group-column>
           <group-row >
@@ -191,13 +225,19 @@
         
         <group-column>
       </group-row>
-
-
-
-
-
-
-
     </div>
   </body>
+  <script>
+    document.getElementById("update_firmware_button").addEventListener("click", function() {
+      fetch(`https://api.github.com/repos/Playtronica/orbita-releases/releases/latest`, {headers: {
+          "Accept": "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        }})
+              .then(response => response.json())
+              .then(data => {
+                console.log(data)
+                window.location.replace(data.assets[0]["browser_download_url"])
+              })
+    });
+  </script>
 </html>
